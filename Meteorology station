@@ -1,0 +1,80 @@
+#include<stdio.h>
+
+typedef struct 
+{
+	int day,month,year;
+}Date;
+
+typedef struct 
+{
+	Date data;
+	float rain,minTemp,maxTemp,avgTemp;
+}MeteoRecord;
+
+//all function
+void inputYearTable(MeteoRecord M[],int n);
+void calavgtemp(MeteoRecord M[],int n);
+float findmintemp(MeteoRecord M[],int n);
+
+
+int main()
+{
+	int n;
+	scanf("%d",&n);
+	MeteoRecord a[n];
+	inputYearTable(a,n);
+	calavgtemp(a,n);
+	float min;
+	min=findmintemp(a,n);
+	printf("min temp=%.2f",min);
+	
+}
+//input function
+void inputYearTable(MeteoRecord M[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("Day#%d\n",i+1);
+		printf("DATE:");
+		scanf("%d%d%d",&M[i].data.day,&M[i].data.month,&M[i].data.year);
+		fflush(stdin);
+		printf("MIN TEMP:");
+		scanf("%f",&M[i].minTemp);
+		fflush(stdin);
+		printf("MAX TEMP:");
+		scanf("%f",&M[i].maxTemp);
+		fflush(stdin);
+	}
+}
+//cal function
+void calavgtemp(MeteoRecord M[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		M[i].avgTemp=(M[i].minTemp+M[i].maxTemp)/2;
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("Day#d ",i+1);
+		printf(" Date :");
+		printf("%d/%d/%d",M[i].data.day,M[i].data.month,M[i].data.year);
+		printf(" AVG TEMP:%.2f\n",M[i].avgTemp);
+	}
+}
+//find min function
+float findmintemp(MeteoRecord M[],int n)
+{
+	int i;
+	float min;
+	min=M[0].minTemp;
+	for(i=0;i<n;i++)
+	{
+		if(M[i].minTemp<min)
+		{
+			min=M[i].minTemp;
+		}
+	}
+	return min;
+}
