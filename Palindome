@@ -1,0 +1,27 @@
+#include<stdio.h>
+#include<string.h>
+
+void palin(char s[]);
+
+int main()
+{
+	char str[20];
+	gets(str);
+	palin(str);
+	return 0;
+}
+void palin(char s[])
+{
+	int i,j=0;
+	char c[20];
+	for(i=strlen(s)-1;i>=0;i--)
+	{
+		c[j]=s[i];
+		j++;			
+	}
+	if(strcmp(s,c)==0)
+	{
+		printf("yes");
+	}
+	else printf("no");
+}
