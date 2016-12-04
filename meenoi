@@ -1,0 +1,49 @@
+#include<stdio.h>
+typedef struct 
+{
+	float math,eng,thai,total;
+}score;
+typedef struct 
+{
+	score student[50];
+}level;
+
+void input(level c[]);
+
+float cal(score s);
+
+int main()
+{
+	
+	level meenoi[3];
+	input(meenoi);
+	int i,j;
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<5;j++)
+		{
+		
+			printf("sum=%f \n",cal(meenoi[i].student[j]));
+		}
+	}
+	
+}
+void input(level c[])
+{
+	int i,j;
+	for(i=0;i<3;i++)
+	{
+		for(j=0;j<5;j++)
+		{
+			printf("meenoi[%d] std[%d] :",i+1,j+1);
+			scanf("%f %f %f",&c[i].student[j].math ,&c[i].student[j].eng ,&c[i].student[j].thai);
+			fflush(stdin);
+		}
+	}
+
+}
+float cal(score s)
+{
+	s.total=s.math+s.eng+s.thai;
+	return s.total;
+}
