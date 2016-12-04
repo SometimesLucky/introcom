@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <string.h>
+
+typedef struct
+{
+	int day,month,year;
+}date;
+
+typedef struct
+{
+	int age,point;
+	char playerid[10],nationality[20],name[20];
+	date updated;
+}player;
+
+int inputplayer(player p[]);
+void updatepoint (player p[],int n);
+void showplayer (player p[],int n);
+void ranking(player p[],int n);
+
+int main()
+{
+	int n;
+	player p[500];
+	n = inputplayer(p);
+	updatepoint (p,n);
+	showplayer (p,n);
+	//ranking(p,n);
+	return 0; 
+}
+
+int inputplayer(player p[])
+{
+	int n,i;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		printf("player%d\n",i+1);
+		printf("playerid :");
+		scanf(" %s",p[i].playerid);
+		printf("name :");
+		scanf(" %[^\n]s", p[i].name);	
+		printf("nationality :");
+		scanf(" %s",p[i].nationality);	
+		printf("age :");
+		scanf("%d",&p[i].age);
+	}
+	return n;
+}
+
+void updatepoint (player p[],int n)
+{
+	int k,i,j;
+	char pid[10];
+	
+	scanf("%d",&k);
+
+	for(i=0;i<k;i++)
+	{
+		printf("playerid");
+		scanf("%s",pid);
+		for(j=0;j<n;j++)
+		{
+			if(!strcmp(p[j].playerid, pid))
+			{
+				printf("%s current point = %d\nEnter new points",p[j].name,p[j].point);
+				scanf("%d",&p[j].point);
+				printf("Updated date (dd/mm/yyyy) : ");
+				scanf("%d/%d/%d",&p[j].updated.day,&p[j].updated.month,&p[j].updated.year);
+			}
+		}
+	}
+}
+
+void showplayer (player p[],int n)
+{
+	int i;
+	printf("Show player information\n");
+	printf("#\tplayerid\tName\t\tnationality\tage\tpoints\tupdated\n------------------------------\n");
+	for(i=0;i<n;i++)
+	{
+	printf("%3d%10d%15s%10s%5d%8d%d/%d/%d\n",i+1,p[i].playerid,p[i].name,p[i].nationality,p[i].age,p[i].point,p[i].updated.day,p[i].updated.month,p[i].updated.year);	
+	}
+	printf("\n------------------------------\n");
+}
+
+void ranking(player p[],int n)
+{
+	int j,k;
+	player i;
+	for(k=0;k<n;k++)
+	for(j=0;j<n;j++)
+	{
+	
+	}
+	
+}
