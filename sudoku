@@ -6,11 +6,14 @@ typedef struct
 }sudokutable;
 
 sudokutable inputsudoku (); 
+void showsudoku (sudokutable t);
 
 int main ()
 {
   sudokutable a;
   a = inputsudoku();
+  showsudoku(a);
+  return 0;
 }
 
 sudokutable inputsudoku ()
@@ -24,4 +27,20 @@ sudokutable inputsudoku ()
 	scanf("%d %d %d %d",&b.table[j][0],&b.table[j][1],&b.table[j][2],&b.table[j][3]);
 	}
 	return b;
+}
+
+void showsudoku (sudokutable t)
+{
+	int i,j;
+	for(j=0;j<4;j++)
+     {
+             printf("\nrow%d : ",j);
+	for(i=0;i<4;i++)
+	{
+	fflush(stdin);
+	printf("%d",t.table[j][i]);
+	printf(" ");
+        }
+            printf("\n");
+    }
 }
