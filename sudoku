@@ -64,7 +64,6 @@ void showsudoku (sudokutable t)
              printf("\nrow%d : ",j);
 	for(i=0;i<4;i++)
 	{
-	fflush(stdin);
 	printf("%d",t.table[j][i]);
 	printf(" ");
         }
