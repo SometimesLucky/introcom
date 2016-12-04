@@ -1,0 +1,27 @@
+#include <stdio.h>
+typedef struct
+{
+	int table[4][4];
+	int issudoku;
+}sudokutable;
+
+sudokutable inputsudoku (); 
+
+int main ()
+{
+  sudokutable a;
+  a = inputsudoku();
+}
+
+sudokutable inputsudoku ()
+{
+	sudokutable b;
+	int i,j;
+	for(j=0;j<4;j++)
+	{
+	printf("\nrow%d : ",j);
+	fflush(stdin);
+	scanf("%d %d %d %d",&b.table[j][0],&b.table[j][1],&b.table[j][2],&b.table[j][3]);
+	}
+	return b;
+}
