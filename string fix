@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void func (char c[],char k);
+int main ()
+{
+	char a[100];
+	gets(a);
+	char t;
+	scanf("%c",&t);
+	func(a,t);
+	puts(a);	
+}
+
+void func (char c[],char k)
+{
+	int b=0,h;
+	while(c[b]!='\0')
+	{
+		if(c[b]==k)
+		{
+			for(h=b;c[h]!='\0';h++)
+			c[h]=c[h+1];		
+		}
+		else 
+		b++;
+	}
+}
+//fix string
