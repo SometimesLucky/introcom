@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <string.h>
+void func (char c[],char k);
+int main ()
+{
+	char a[100];
+	gets(a);
+	char t;
+	scanf("%c",&t);
+	func(a,t);
+	puts(a);	
+}
+
+void func (char c[],char k)
+{
+	int b,h=0;
+	char pi[100];
+	for(b=0;c[b]!='\0';b++)
+	{
+		if(c[b]!=k)
+		{
+			pi[h]=c[b];
+			h++;
+		}
+	}
+	strcpy(c,pi);
+}
