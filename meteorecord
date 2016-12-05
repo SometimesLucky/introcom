@@ -1,0 +1,94 @@
+#include <stdio.h>
+typedef struct
+{
+	int day,month,year;
+}Date;
+
+typedef struct
+{
+	Date date;
+	float rain,mintemp,maxtemp,avgtemp;
+}meteorecord;
+
+void inputyeartable(meteorecord m[],int n);
+void calavg(meteorecord m[],int n);
+float findmin(meteorecord m[],int n);
+void monthly(meteorecord m[],int n);
+
+int main ()
+{
+		int k;
+		float min;
+		scanf("%d",&k);
+		meteorecord b[365];
+		inputyeartable(b,k);
+		calavg(b,k);
+		min = findmin(b,k);
+		printf("\nmin=%f\n",min);
+		monthly(b,k);
+		return 0;
+}
+
+void inputyeartable(meteorecord m[],int n)
+{
+	int i;
+	freopen("met.txt","r",stdin);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d %d %d",&m[i].date.day,&m[i].date.month,&m[i].date.year);
+		scanf("%f",&m[i].rain);
+		scanf("%f",&m[i].mintemp);
+		scanf("%f",&m[i].maxtemp);
+	}
+}
+
+void calavg(meteorecord m[],int n)
+{
+	int i=0;
+	for(i=0;i<n;i++)
+	{
+		m[i].avgtemp=(m[i].mintemp+m[i].maxtemp)/2;
+	}
+	for(i=0;i<n;i++)
+	{
+		printf("\n%d/%d/%d %f",m[i].date.day,m[i].date.month,m[i].date.year,m[i].avgtemp);
+	}
+}
+
+float findmin(meteorecord m[],int n)
+{
+	int i;
+	float min=m[0].mintemp;
+	for(i=0;i<n;i++)
+	{
+		if(m[i].mintemp<min)
+		min=m[i].mintemp;
+	}
+	return min;
+}
+
+void monthly(meteorecord m[],int n)
+{
+	int i=0,j=0,k=0,s=0;
+	float b=30;
+	float sum=0;
+	if(n/b-int(n/b)!=0)
+	{
+		s=int(n/b)+1;
+	}
+	else
+	s=int(n/b);
+	
+	for(j=0;j<s;j++)
+	{
+	while(i<30)
+	{
+	sum+=m[k].rain;
+	k++;
+	i++;	
+	}
+	printf("%f\n",sum);
+	i=0;
+	sum=0;
+	}
+}
