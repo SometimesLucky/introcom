@@ -1,0 +1,85 @@
+#include<stdio.h>
+#include<string.h>
+typedef struct{
+	int number;
+	char name[20];
+	char party[20];
+	int vote;
+}Candidate;
+
+ShowCandidates(Candidate c[]);
+
+int main(){
+	Candidate c[6];
+	int total=0;
+	int voteNo=0;
+	int bad=0;
+	int v,i;
+
+	c[1].number=1; strcpy(c[1].name,"Bill Clinton"); strcpy(c[1].party,"Democrat");
+	c[2].number=2; strcpy(c[2].name,"Geo W. Bush"); strcpy(c[2].party,"Republlican");
+	c[3].number=3; strcpy(c[3].name,"Barack Obama"); strcpy(c[3].party,"Modernism");
+	c[4].number=4; strcpy(c[4].name,"John F. Kennedy"); strcpy(c[4].party,"Socialism");
+	c[5].number=5; strcpy(c[5].name,"Abraham Lincoln"); strcpy(c[5].party,"Conservative");
+
+	printf("PM Election Program\n");
+	printf("Here are the candidate\n");
+	ShowCandidates(c);
+	printf("Enter of voting\n");
+	
+	for(i=0; i<100 ;i++){
+		scanf("%d",&v);
+		if(v<0)
+		i=100;
+		else if(v==0){
+		voteNo++;
+		total++;}
+		else if(v>5){
+		bad++;
+		total++;}
+		else{
+			for(i=1; i<6; i++)
+				if(v==c[i].number){
+				c[i].vote++;
+				total++;}
+		}
+	}
+	printf("bad=%d\n",bad);
+	printf("total=%d\n",total);
+	printf("voteNo=%d\n",voteNo);
+	printf("Voting Results\n");
+	printf("---------------------------------------------------------\n");
+	printf("No.     Candidate Name            Party            Votes \n");
+	printf("---------------------------------------------------------\n");
+	
+	int x;
+	for(x=1; x<6; x++){
+		printf("%d",x);
+		printf("       ");
+		printf("%s",c[x].name);
+		printf("         ");
+		printf("%s",c[x].party);
+		printf("     ");
+		printf("%d",c[x].vote);
+		printf("\n");
+	}
+	int y;
+	int max=0;
+	int p=0;
+	for(y=1; y<6; y++){
+		if(max<c[y].vote){
+		max=c[y].vote;
+		p=y;
+		}		
+	}
+	if(p>0)
+	printf("The elected prime minster is No.%d %s (%s)",p,c[p].name,c[p].party);
+	else 
+	printf("Fuckkkkk");	
+}
+
+ShowCandidates(Candidate c[]){
+	int i;
+	for(i=1; i<6; i++)
+		printf("Candidate #%d : %s (%s)\n",c[i].number,c[i].name,c[i].party);
+}
