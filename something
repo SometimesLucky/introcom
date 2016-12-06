@@ -16,7 +16,6 @@ typedef struct
 int inputplayer(player p[]);
 void updatepoint (player p[],int n);
 void showplayer (player p[],int n);
-void ranking(player p[],int n);
 
 int main()
 {
@@ -32,6 +31,7 @@ int main()
 int inputplayer(player p[])
 {
 	int n,i;
+	//freopen("input1.txt","r",stdin);
 	scanf("%d",&n);
 	for(i=0;i<n;i++)
 	{
@@ -52,7 +52,7 @@ void updatepoint (player p[],int n)
 {
 	int k,i,j;
 	char pid[10];
-	
+	//freopen("input2.txt","r",stdin);
 	scanf("%d",&k);
 
 	for(i=0;i<k;i++)
@@ -76,22 +76,18 @@ void showplayer (player p[],int n)
 {
 	int i;
 	printf("Show player information\n");
-	printf("#\tplayerid\tName\t\tnationality\tage\tpoints\tupdated\n------------------------------\n");
+	printf("#  playerid    Name          nationality   age  points  updated");
+	printf("\n--------------------------------------------------------------\n");
 	for(i=0;i<n;i++)
 	{
-	printf("%3d%10d%15s%10s%5d%8d%d/%d/%d\n",i+1,p[i].playerid,p[i].name,p[i].nationality,p[i].age,p[i].point,p[i].updated.day,p[i].updated.month,p[i].updated.year);	
+	printf("%-2d",i+1);
+	printf("%-10s",p[i].playerid);
+	printf("%-18s",p[i].name);
+	printf("%-12s",p[i].nationality);
+	printf("%-7d",p[i].age);
+	printf("%-5d",p[i].point);
+	printf("%-2d/%d/%d\n",p[i].updated.day,p[i].updated.month,p[i].updated.year);
+	//printf("%3d%10d%15s%10s%5d%8d%d/%d/%d\n",i+1,p[i].playerid,p[i].name,p[i].nationality,p[i].age,p[i].point,p[i].updated.day,p[i].updated.month,p[i].updated.year);	
 	}
-	printf("\n------------------------------\n");
-}
-
-void ranking(player p[],int n)
-{
-	int j,k;
-	player i;
-	for(k=0;k<n;k++)
-	for(j=0;j<n;j++)
-	{
-	
-	}
-	
+	printf("\n--------------------------------------------------------------\n");
 }
