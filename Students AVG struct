@@ -1,0 +1,41 @@
+#include<stdio.h>
+
+struct sub{
+	char subcode[7];
+	float credit;
+	float grade;
+};
+struct student{
+	char id[10];
+	struct sub Sub[10]; 
+	float gpa;
+};
+
+int main(){
+	struct student p;
+	int i;
+	float avg=0,gr=0,cr=0;
+	printf("Enter Date\n");
+	printf("ID: ");
+	scanf("%s",p.id);
+	fflush(stdin);
+	for(i=0; i<5; i++){
+	printf("Subject #%d\n",i+1);
+	printf("Subject Code : ");
+	scanf("%s",p.Sub[i].subcode);
+	fflush(stdin);
+	printf("Credit: ");
+	scanf("%f",&p.Sub[i].credit);
+	fflush(stdin);
+	printf("Grade(0-4): ");
+	scanf("%f",&p.Sub[i].grade);
+	fflush(stdin);
+	printf("\n");
+	}
+	for(i=0; i<5; i++){
+		gr=gr+p.Sub[i].grade;
+		cr=cr+p.Sub[i].credit;
+	}
+	avg=gr/cr;
+	printf("AVG = %.2f",avg);
+}
