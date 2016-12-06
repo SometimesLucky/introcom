@@ -1,0 +1,78 @@
+#include <stdio.h>
+
+typedef struct {
+	int number;
+	char name[20];
+	char party[20];
+	int vote;
+}candidate;
+
+void showcandidate(candidate a[]);
+
+int main()
+{
+	candidate c[6]={{},{1,"Bill Clinton","Democrat",0},{2,"George w.","Replubican",0},{3,"Barack Obama","Modernism",0},{4,"John F Kenedy","Socialism"},{5,"Abraham","Conversative",0}};
+	showcandidate(c);
+	int total=0;
+	int voteno=0;
+	int bad=0;
+	int x;
+	int v;
+	int y;
+	int max=0;
+	int p=0;
+	for(;;)
+	{
+		scanf("%d",&v);
+		total++;
+		if(v<0)
+		{
+			total--;
+		break;
+	    }
+	else if(v>5)
+  	{
+		bad++;
+	}
+	else if(v==0)
+	{
+		voteno++;
+	}
+	else 
+	{
+		c[v].vote++;
+	}
+	}
+	printf("\nEnd of voting\n");
+	printf("Voting summary\n");
+	printf("Total votes=%d\n",total);
+	printf("Bad votes=%d\n",bad);
+	printf("Votes no=%d\n",voteno);
+	printf("---------------------------------------------------\n");
+	printf("No.   Candidates Name    Party    Vote\n");
+	printf("---------------------------------------------------\n");
+	for(x=1;x<6;x++)
+	printf("%d : %-15s (%-10s) %6d\n",c[x].number,c[x].name,c[x].party,c[x].vote);
+	for(y=1;y<6;y++)
+    {
+			if(c[y].vote>max)
+			{
+				max=c[y].vote;
+				p=y;
+			}
+	}
+	if(p!=0)
+	printf("The prime minister is %d name %s from %s with %d votes",c[p].number,c[p].name,c[p].party,c[p].vote);
+	else 
+	printf("No one");
+		
+	
+	return 0;
+}
+
+void showcandidate(candidate a[])
+{
+	int x;
+	for(x=1;x<6;x++)
+	printf("candidate %d : %s (%s)\n",a[x].number,a[x].name,a[x].party);
+}
