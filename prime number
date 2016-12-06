@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main()
+{
+	int x,i=2;
+	scanf("%d",&x);
+	while(i<x)
+	{
+		if(x%i==0)
+		{
+			printf("it is not\n");
+			i=x+1;
+		}
+		i++;
+	}
+	if(i==x)
+	{
+		printf("it is");
+	} 
+
+	return 0;
+}
