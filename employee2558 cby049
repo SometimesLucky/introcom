@@ -1,0 +1,95 @@
+#include<stdio.h>
+#include<string.h>
+typedef struct
+{
+	int d,m,y;
+}date;
+typedef struct
+{
+	char name[30];
+	date start;
+	float salary;
+}employee;
+
+employee input(employee e[],int n);
+employee incs(employee e,float p);
+employee findemp(employee e[],int n);
+
+int main()
+{
+	int n,i;
+	
+	employee fuck;
+	
+	scanf("%d",&n);
+	employee m[n];
+	input(m,n);
+
+	m[0].salary=100;
+	m[1].salary=1000;
+	employee x[n];
+	for(i=0;i<n;i++)
+	{
+		x[i]=incs(m[i],10);
+		printf("up person :%.2f\n",x[i].salary);
+	}
+	
+	fuck=findemp(m,n);
+	printf("old man is %s\n",fuck.name);
+	return 0;
+}
+employee incs(employee e,float p)
+{
+	e.salary=e.salary+(p/100*e.salary);
+	return e;
+}
+
+employee input(employee e[],int n)
+{
+	int i;
+	for(i=0;i<n;i++)
+	{
+		printf("name#%d:",i+1);
+		fflush(stdin);
+		gets(e[i].name);
+		fflush(stdin);
+		printf("start#%d:",i+1);
+		scanf("%d %d %d",&e[i].start.d,&e[i].start.m,&e[i].start.y);
+		fflush(stdin);
+		printf("salary:");
+		scanf("%f",&e[i].salary);
+		fflush(stdin);
+	}
+}
+
+employee findemp(employee e[],int n)
+{
+	int i;
+	date oldday={32,13,3000};
+	
+	employee sb;
+
+	for(i=0;i<n;i++)
+	{
+		if(oldday.y>e[i].start.y)
+		{
+			oldday=e[i].start;
+			strcpy(sb.name,e[i].name);
+		}
+		else if((oldday.y==e[i].start.y)&&(oldday.m>e[i].start.m))
+		{
+			oldday=e[i].start;
+			strcpy(sb.name,e[i].name);
+		}
+		else if((oldday.y==e[i].start.y)&&(oldday.m==e[i].start.m)&&(oldday.d>e[i].start.d))
+		{
+			oldday=e[i].start;
+			strcpy(sb.name,e[i].name);
+		}
+	}
+
+	return sb;
+}
+
+
+
