@@ -1,0 +1,23 @@
+
+#include <stdio.h>
+
+int fac(int n)
+{
+	int j,sum=1;
+	int a[n]={1};
+	for(j=1;j<=n;j++)
+	{
+			a[j-1]=j;
+			sum*=a[j-1];
+			a[j]=sum;
+	}
+	return sum;
+}
+
+int main ()
+{
+	int i;
+	scanf("%d",&i);
+	printf("%d",fac(i));
+	return 0;
+}
