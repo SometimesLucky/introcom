@@ -1,0 +1,16 @@
+#include <stdio.h>
+int main (void)
+{
+	int ndays, week, day;
+	int year,month;
+	printf(  "Input number of days :" );
+	scanf("%d", &ndays);
+	year = ndays/365;
+	month = ndays%365/30;
+	week = ndays%365%30/7;
+	day= ndays%365%30%7;
+	printf("It is equivalent to %d years %d months %d weeks and ",year,month,week);
+	printf("%d days.\n",day);
+	
+	return 0;
+}
