@@ -1,0 +1,82 @@
+#include <stdio.h>
+int main()
+{
+ int i,j,k;
+ float books[2][5][3];
+ for(i=0;i<2;i++)
+ {
+ 	for(j=0;j<5;j++)
+ 	{
+ 		for(k=0;k<3;k++)
+ 		{
+ 			printf("books[%d][%d] ",i,j);
+ 			if(k==0)
+ 			printf("price is ");
+ 			else if(k==1)
+ 			printf("page is ");
+ 			else if(k==2)
+ 			printf("weight is ");
+ 	
+ 			scanf("%f",&books[i][j][k]);
+		 }
+	}
+ }
+  for(i=0;i<2;i++)
+ {
+ 	for(j=0;j<5;j++)
+ 	{
+ 		for(k=0;k<3;k++)
+ 		{
+ 			printf("books[%d][%d] ",i,j);
+ 			if(k==0)
+ 			printf("price is ");
+ 			else if(k==1)
+ 			printf("page is ");
+ 			else if(k==2)
+ 			printf("weight is ");
+ 			
+ 			printf("%f\n",books[i][j][k]);
+		 }
+	}
+ }
+ 
+ float maxprice=books[0][0][0];
+ for(i=0;i<2;i++)
+ {
+ 	for(j=0;j<5;j++)
+ 	{
+ 			if(books[i][j][0]>maxprice)
+		 {
+		 	maxprice=books[i][j][0];
+		 }
+	}
+ }
+ printf("maxprice = %f\n",maxprice);
+ 
+ float minpage=books[0][0][1];
+ for(i=0;i<2;i++)
+ {
+ 	for(j=0;j<5;j++)
+ 	{
+ 			if(books[i][j][1]<minpage)
+		 {
+		 	minpage=books[i][j][1];
+		 }
+	}
+ }
+ printf("minpage = %f\n",minpage);
+ 
+ float sum=0,avgweight;
+  for(i=0;i<2;i++)
+ {
+ 	for(j=0;j<5;j++)
+ 	{
+ 			sum+=books[i][j][2];
+	}
+	avgweight=sum/j;
+ printf("average weight books[%d] = %f\n",i,avgweight);
+ sum=0;
+ }
+ 
+return 0;
+}
