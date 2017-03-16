@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main()
+{
+	int l=0,k=0,i,a,c=0,d=1,e=1,f=1;
+	int b=10;
+	scanf("%d",&a);
+	while(a/b!=0)
+	{
+		b=b*10;
+		e++;
+	}
+	for(i=0;i<e/2;i++)
+	{
+	f=f*10;
+	}
+	c=a/f/10;
+	d=a%f;
+	for(i=0;i<e/2;i++)
+	{
+	k=c%10;
+	c=c/10;
+	f=f/10;
+	l=d/f;
+	d=d%f;
+	if(l!=k)
+	{
+		printf("No\n");
+		return 0;
+	}
+	}
+	printf("Yes");
+	return 0;
+}
+
