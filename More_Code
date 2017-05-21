@@ -1,0 +1,407 @@
+#include <stdio.h>
+#include <string.h>
+#include <windows.h>
+
+
+void Morse_Code(char Message[]);
+
+int main()
+{
+	char Message_Input[100];
+	
+	//Input Message
+	printf("Enter Message : ");
+	gets(Message_Input);
+	
+	Morse_Code(Message_Input);
+	
+    return 0;
+}
+
+void Morse_Code(char Message[])
+{
+	int i;
+		for(i=0;i<strlen(Message);i++)
+	{
+		if(Message[i]=='1')
+		{printf("[1]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='2')
+		{printf("[2]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='3')
+		{printf("[3]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='4')
+		{printf("[4]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='5')
+    {printf("[5]");
+    Beep(1000,200);
+    printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='6')
+		{printf("[6]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='7')
+		{printf("[7]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='8')
+		{printf("[8]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='9')
+		{printf("[9]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='0')
+		{printf("[0]");	
+		Beep(1200,200);
+		printf("-");	
+		Beep(1200,200);
+		printf("-");	
+		Beep(1200,200);
+		printf("-");	
+		Beep(1200,200);
+		printf("-");	
+		Beep(1200,200);
+		printf("- \n");	
+		Beep(3000,300);}	
+		else if(Message[i]=='A'||Message[i]=='a')
+		{printf("[A]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='B'||Message[i]=='b')
+		{printf("[B]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='C'||Message[i]=='c')
+		{printf("[C]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='D'||Message[i]=='d')
+		{printf("[D]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='E'||Message[i]=='e')
+		{printf("[E]");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='F'||Message[i]=='f')
+		{printf("[F]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='G'||Message[i]=='g')
+		{printf("[G]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='H'||Message[i]=='h')
+		{printf("[H]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='I'||Message[i]=='i')
+		{printf("[I]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='J'||Message[i]=='j')
+		{printf("[J]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='K'||Message[i]=='k')
+		{printf("[K]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='L'||Message[i]=='l')
+		{printf("[L]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='M'||Message[i]=='m')
+		{printf("[M]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='N'||Message[i]=='n')
+		{printf("[N]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='O'||Message[i]=='o')
+		{printf("[O]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='P'||Message[i]=='p')
+		{printf("[P]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='Q'||Message[i]=='q')
+		{printf("[Q]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='R'||Message[i]=='r')
+		{printf("[R]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='S'||Message[i]=='s')
+		{printf("[S]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}	
+		else if(Message[i]=='T'||Message[i]=='t')
+		{printf("[T]");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='U'||Message[i]=='u')
+		{printf("[U]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='V'||Message[i]=='v')
+		{printf("[V]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='W'||Message[i]=='w')
+		{printf("[W]");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='X'||Message[i]=='x')
+		{printf("[X]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}
+		else if(Message[i]=='Y'||Message[i]=='y')
+		{printf("[Y]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("- \n");
+		Beep(3000,300);}	
+		else if(Message[i]=='Z'||Message[i]=='z')
+		{printf("[Z]");
+		Beep(1200,200);
+		printf("-");
+		Beep(1200,200);
+		printf("-");
+		Beep(1000,200);
+		printf(".");
+		Beep(1000,200);
+		printf(". \n");
+		Beep(3000,300);}
+		else if(Message[i]=='_')
+		printf(" \n");																
+		else
+		printf("ERROR\n");	
+	}
+	printf("\n\n");
+	printf("End Program : Morse_Code");
+	printf("SANDBOB");
+	
+}
