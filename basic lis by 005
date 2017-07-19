@@ -23,7 +23,7 @@ int main()
   {
   	if(input[j]>input[i])
   	{
-  		if(nub[i]<=nub[j])
+  		if(nub[i]>=nub[j])
   	nub[j]=nub[i]+1;	
 	}
   }
