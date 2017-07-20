@@ -1,0 +1,101 @@
+#include <stdio.h>
+int findmax(int input[],int amount)
+{
+	int findmax=input[0];
+	int k;
+	for(k=1;k<amount;k++)
+	{
+		if(input[k]>=findmax)
+		{
+			findmax=input[k];
+		}
+	}
+	return findmax;
+}
+
+int maxposition(int input[],int amount)
+{
+		int findmax=input[0];
+	int k;
+	int position=0;
+	for(k=1;k<amount;k++)
+	{
+		if(input[k]>=findmax)
+		{
+			findmax=input[k];
+			position = k;
+		}
+	}
+	return position;
+}
+
+void one(int input[],int amount)
+{
+	int k;
+	for(k=0;k<amount;k++)
+	{
+		input[k]=1;
+	}
+}
+
+void lis(int input[],int output[],int amount)
+{
+	int i,j;  
+	for(j=1;j<amount;j++)
+  {
+  	for(i=0;i<j;i++)
+   { 
+  	if(input[j]>input[i])
+  	{
+  	if(output[i]>=output[j])
+  	
+	  {
+	  output[j]=output[i]+1;
+	}
+	}
+   }
+  }
+}
+
+void lds(int input[],int output[],int amount,int maxposi)
+{
+	int i,j;
+  for(j=maxposi+2;j<amount;j++)
+  {
+  for(i=maxposi+1;i<j;i++)
+  {
+  	if(input[j]<input[i])
+  	{
+  	if(output[i]>=output[j])
+  	
+	  {
+	  output[j]=output[i]+1;
+	}
+	}
+  }
+}
+}
+
+int main()
+{
+  char temp;
+  int amount;
+  scanf("%d",&amount);
+  int input[amount];
+  int nub2[amount];
+  int i=0;
+  do {
+    scanf("%d%c",&input[i],&temp);
+    i++;
+  } while(temp != '\n');
+  int nub[amount];
+  one(nub,amount);  
+  lis(input,nub,amount);
+  int max=findmax(nub,amount);
+  int maxposi = maxposition(nub,amount);
+  one(nub2,amount);
+  lds(input,nub2,amount,maxposi);
+  int max2=findmax(nub2,amount);
+  printf("%d\n",max+max2);	
+  return 0;
+}
