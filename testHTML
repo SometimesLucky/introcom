@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> java script lab </title>
+</head>
+<body>
+<h1> test HTML2 </h1>
+	<script> 
+	/* This is how to comment if javascr comes after h1 then h1 wont appear until click*/ 
+	//alert ("Test java script"); 
+	var name = "kittasil silanon";
+	var number = 20;
+	var bool = true;
+	//no need to specify the type
+	//name rule is close to c but can put $ in the name
+	// if(number == 20)
+	// {
+	// 	alert("num = 20!");
+	// }
+	// else
+	// {
+	// 	alert("num = 20!");
+	// }
+	//var num = 0;
+	// for(var num = 0; num < 10 ; num++ )
+	// {
+	// 	alert(num);
+	// 	num++;
+	// }
+	//loop and if close to c
+	// function myFunction()
+	// {
+	// 	alert("myFunction");
+	// }
+
+	// myFunction();
+	//simple function
+
+		// var radius = 5;
+		// function areacircle(radius)
+		// {
+		// 	var area = 3.14 * radius * radius;
+		// 	alert("area = "+area); 
+		// }
+
+	// var a;
+	// 		function areacircle(radius)
+	// 	{
+	// 		var area = 3.14 * radius * radius;
+	// 		return area; 
+	// 	} 
+	// 	a = areacircle(5);
+	// 	alert(" a = " + a);
+		//example return
+	// var b = [5 , "Hello world",true];
+	// alert(b[0]);
+	// alert(b[1]);
+	// alert(b[2]);
+	//array can hold vary types and no need to tell the size
+		// var person = {
+		// 	firstName: "Nattawat",
+		// 	lastName: "Songsom",
+		// 	id: 5935512005,
+		// 	//property example
+		// 	fullinfo:function()
+		// 	{
+		// 		return this.firstName + " " + this.lastName + " " + this.id;
+		// 	}
+			//method example
+		//};
+		//to declare an boject 
+		// var name = person.fullinfo();
+		// alert(name);
+		//Don't forget to learn about json
+
+	</script>
+
+<!-- 	<h1 id = "id1">html</h1>
+	<h1 id = "id2">html2</h1> -->
+<!-- can make this 2 diff --> 
+
+<!-- 	<p id="intro">Hello world</p>
+	<p>This example demonstrates the<b>getElementById</b></p>
+	<p id ="demo"></p> -->
+		<!-- <h1 onclick = "test">Click here</h1> -->
+		<!-- bug -->
+<!-- 	event example -->
+<!-- 	<h1 onclick="textChange(this)">click</h1> -->
+
+
+
+		<form id="form1">
+			<input id = "txt1" type="text" ><br>
+			<input id = "txt2" type="text" ><br>
+			<input type="button" value = "บวก" onclick="add()"><br>		
+		</form>
+	<script>
+		// function textChange(id)
+		// {
+		// 	id.innerHTML = "Changed";
+		// };
+		// event again
+		// var myElement = document.getElementById("intro");
+		// document.getElementById("demo").innerHTML = " test = " + myElement.innerHTML;
+	//pulling id and add text
+
+
+
+
+
+
+
+
+
+
+
+
+
+		function add()
+		{
+			var num1 = eval(document.getElementById('txt').value);
+			//eval cahne test to number
+			//everything from textbox is  text
+			var num2 = eval(document.getElementById('txt2').value);
+			var result = num1 + num2;
+			alert(result);
+		};
+	</script>
+
+</body>
+</html>

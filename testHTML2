@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+    <img id = "mainTmg" src="imgCat.jpg" >
+    <script src= "testScript.js"></script>
+    
+</body>
+</html>
